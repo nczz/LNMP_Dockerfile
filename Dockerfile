@@ -36,7 +36,7 @@ RUN echo 'PasswordAuthentication no' >> /etc/ssh/sshd_config
 RUN mkdir /var/run/sshd && chmod 0755 /var/run/sshd
 RUN mkdir -p /root/.ssh/
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
-ADD develop_server.key.pub  /root/.ssh/authorized_keys
+ADD server.key.pub  /root/.ssh/authorized_keys
 # drush
 #RUN wget http://files.drush.org/drush.phar
 #RUN php drush.phar core-status
